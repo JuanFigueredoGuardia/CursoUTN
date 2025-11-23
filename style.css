@@ -1,0 +1,357 @@
+/* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #003366;
+    padding: 15px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-main-logo {
+    height: 50px;
+    max-width: 180px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+.navbar ul li a, .navbar ul li button {
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.navbar ul li a:hover, .navbar ul li a.active, .navbar ul li button:hover {
+    background-color: #0055aa;
+}
+
+/* Menú hamburguesa (Oculto en escritorio) */
+#menu-bar {
+    display: none;
+}
+.navbar label {
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+/* Contenido Principal */
+main {
+    flex: 1;
+    padding-top: 80px; /* Ajuste para el header fijo */
+}
+
+.content {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.main-image img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Cursos y Diplomaturas */
+.courses-page h1 {
+    text-align: center;
+    color: #003366;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.course-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+}
+
+.course-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.course-info {
+    padding: 20px;
+}
+
+.course-info h3 {
+    font-size: 1.1rem;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.course-info p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.course-button {
+    background-color: #0055aa;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    display: inline-block;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.course-button:hover {
+    background-color: #003366;
+}
+
+/* Formularios de Login/Registro/Inscripción */
+#auth-section input[type="email"], 
+#auth-section input[type="password"],
+.registration-page input[type="text"],
+.registration-page input[type="email"],
+.registration-page textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.registration-page label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.link-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+/* --- Estilos del Loader --- */
+#page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.loader-spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #0055aa;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Estilos para Admin Dashboard --- */
+#admin-dashboard {
+    background-color: #fff8e1; 
+    border: 1px solid #ffecb3;
+    padding: 25px;
+    margin-top: 30px;
+    border-radius: 8px;
+}
+#admin-dashboard h2 {
+    color: #f57f17;
+    margin-bottom: 20px;
+}
+/* Contenedor para hacer la tabla scrollable en móvil */
+.admin-table-container {
+    overflow-x: auto;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.admin-table th, .admin-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    font-size: 0.9rem;
+    white-space: nowrap; /* Evita que el contenido de la tabla se rompa en varias líneas */
+}
+.admin-table th {
+    background-color: #003366;
+    color: white;
+}
+.small-btn {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    margin-right: 5px;
+}
+.delete-btn {
+    background-color: #dc3545;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 20px 7%;
+    text-align: center;
+    margin-top: auto; 
+}
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.footer-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+/* ================================================= */
+/* 🚀 MEDIA QUERIES PARA RESPONSIVIDAD */
+/* ================================================= */
+
+/* Tablet y Teléfonos Grandes (Hasta 992px) */
+@media (max-width: 992px) {
+    header {
+        padding: 15px 5%;
+    }
+    /* NAV BAR (Menú Hamburguesa) */
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #003366;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        display: none;
+    }
+    #menu-bar:checked ~ .navbar {
+        display: block;
+    }
+    .navbar ul {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .navbar ul li a, .navbar ul li button {
+        display: block;
+        margin: 5px 0;
+    }
+    .navbar label {
+        display: block;
+    }
+}
+
+/* Teléfonos Móviles (Hasta 768px) */
+@media (max-width: 768px) {
+    /* Main Content */
+    main {
+        padding-top: 70px; 
+    }
+    .content {
+        margin: 15px auto;
+        padding: 15px;
+    }
+    
+    /* Course Grid: Una sola columna */
+    .courses-grid {
+        grid-template-columns: 1fr; 
+    }
+    .course-card {
+        max-width: 90%;
+        margin: auto;
+    }
+    
+    /* Admin Dashboard: Tablas obligatoriamente scrollables */
+    .admin-table-container {
+        /* Ya configurado con overflow-x: auto */
+    }
+    .admin-table {
+        min-width: 600px; /* Asegura un ancho mínimo para la tabla */
+    }
+    
+    /* Login/Auth: Botones de selección de rol apilados */
+    #role-selection div {
+        flex-direction: column;
+        gap: 10px;
+    }
+    #role-selection button {
+        width: 100%;
+    }
+    
+    /* Footer */
+    .footer-content p {
+        font-size: 0.9rem;
+    }
+    .footer-icons a {
+        font-size: 1.2rem;
+    }
+}

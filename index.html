@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página principal - Extensión Universitaria</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="Imagenes/cursos-y-capacitacion-utn-concordia-2023.png" alt="Logo Extensión Universitaria" 
+            class="header-main-logo">
+        </a>
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar">Menú</label>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html" data-page="home" class="active">Inicio</a></li>
+                <li><a href="cursos.html" data-page="cursos">Cursos</a></li>
+                <li><a href="diplomaturas.html" data-page="diplomaturas">Diplomaturas</a></li>
+                <li><a href="contacto.html" data-page="contacto">Contacto</a></li>
+                <li><a href="#" id="header-auth-btn" data-page="auth">Acceso</a></li>
+                <li><button id="logout-btn" class="link-button" style="color: white; display: none;">Salir</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="page-loader">
+            <div class="loader-spinner"></div>
+            <p style="color:#0055aa; font-weight: 600;">Conectando con la base de datos...</p>
+        </div>
+
+        <section id="auth-section" class="content" style="display:none; margin-top: 100px; text-align: center;">
+            
+            <div id="role-selection">
+                <h2 style="margin-bottom: 20px;">Selecciona tu Perfil de Acceso</h2>
+                <p style="margin-bottom: 30px; color: #555;">Elige si eres un estudiante o un administrador.</p>
+                <div style="display: flex; gap: 20px; justify-content: center;">
+                    <button id="show-student-login" class="course-button">Acceso Estudiante</button>
+                    <button id="show-admin-login" class="course-button" style="background-color: #dc3545;">Acceso Administrador</button>
+                </div>
+            </div>
+
+            <div id="login-container" style="display:none; max-width: 400px; margin: 0 auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <button id="back-to-selection" class="link-button" style="margin-bottom: 15px; color: #003366;"><i class="fas fa-arrow-left"></i> Volver a la Selección de Rol</button>
+                <h3 id="login-form-title" style="margin-bottom: 20px;">Acceso</h3>
+                <p id="auth-error" style="color: red; margin-bottom: 10px;"></p>
+                
+                <form id="login-form">
+                    <input type="email" id="login-email" name="login-email" placeholder="Correo electrónico" required>
+                    <input type="password" id="login-password" name="login-password" placeholder="Contraseña" required>
+                    <button type="submit" class="course-button" style="width: 100%; margin-top: 15px;">Iniciar Sesión</button>
+                </form>
+                
+                <p style="margin-top: 15px; text-align: center;">
+                    <button id="show-signup" class="link-button" style="color: #0055aa; text-decoration: underline;">¿No tienes cuenta? Regístrate</button>
+                </p>
+            </div>
+            
+            <div id="signup-container" style="display:none; max-width: 400px; margin: 0 auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <button id="show-login" class="link-button" style="margin-bottom: 15px; color: #003366;"><i class="fas fa-arrow-left"></i> Volver al Inicio de Sesión</button>
+                <h3 id="signup-form-title" style="margin-bottom: 20px;">Registro de Estudiante</h3>
+                
+                <form id="signup-form">
+                    <input type="email" id="signup-email" name="signup-email" placeholder="Correo electrónico" required>
+                    <input type="password" id="signup-password" name="signup-password" placeholder="Contraseña" required>
+                    <button type="submit" class="course-button" style="width: 100%; margin-top: 15px; background-color: #28a745;">Crear Cuenta</button>
+                </form>
+            </div>
+
+        </section>
+
+
+        <section class="content" id="home-content" style="display:none;">
+            <div class="main-image">
+                <img src="Imagenes/utn-concordia.jpg" alt="Fachada de UTN Facultad Regional Concordia">
+            </div>
+            <div class="text-content">
+                <h1>Extensión Universitaria UTN - Facultad Regional Concordia</h1>
+                <p>
+                    "Transforma tu futuro con Extensión Universitaria: Donde el aprendizaje se encuentra con la oportunidad.
+                    En el corazón de la innovación educativa, Extensión Universitaria se erige como un faro de conocimiento y crecimiento personal.
+                    Nos dedicamos a abrir las puertas del aprendizaje continuo, ofreciendo un abanico de cursos y diplomaturas diseñados para
+                    equiparte con las habilidades y el conocimiento que necesitas para triunfar en el mundo actual."
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Rivadavia 846 (Concordia, ER, Argentina)</p>
+            <p>Contacto: De lunes a viernes de 15 a 20 horas</p>
+            <p>Contactos y redes</p>
+            <div class="footer-icons">
+                <a href="https://www.facebook.com/UTNConcordia" class="icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/utnconcordia?igsh=MTlhOHgzbTFsNTBraw==" class="icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/+5493456028922" class="icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:cursos@frcon.utn.edu.ar" class="icon"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> 
+    <script src="script.js"></script>
+</body>
+</html>

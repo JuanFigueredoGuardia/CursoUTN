@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos - Extensión Universitaria</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="Imagenes/cursos-y-capacitacion-utn-concordia-2023.png" alt="Logo Extensión Universitaria" class="header-main-logo">
+        </a>
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar">Menú</label>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html" data-page="home">Inicio</a></li>
+                <li><a href="cursos.html" data-page="cursos" class="active">Cursos</a></li>
+                <li><a href="diplomaturas.html" data-page="diplomaturas">Diplomaturas</a></li>
+                <li><a href="contacto.html" data-page="contacto">Contacto</a></li>
+                <li><a href="#" id="header-auth-btn" data-page="auth">Acceso</a></li>
+                <li><button id="logout-btn" class="link-button" style="color: white; display: none;">Salir</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="courses-page">
+        <h1>Cursos Disponibles</h1>
+        
+        <section id="admin-dashboard" class="content" style="display: none; max-width: 1200px; margin: 30px auto;">
+            <h2>Panel de Administración de Cursos</h2>
+            
+            <button id="add-course-btn" class="course-button" style="background-color: #28a745; margin-bottom: 20px;">Añadir / Editar Curso</button>
+            
+            <div id="add-course-section" style="display: none; background: #fff; padding: 20px; border-radius: 6px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <h3 id="course-form-title">Crear Nuevo Curso</h3>
+                <form id="course-form">
+                    <input type="hidden" id="course-id-input-admin">
+                    <input type="text" id="course-title" placeholder="Título" required style="width: 100%; margin-bottom: 10px; padding: 8px;">
+                    <textarea id="course-description" placeholder="Descripción" required style="width: 100%; margin-bottom: 10px; padding: 8px;"></textarea>
+                    <input type="text" id="course-image" placeholder="URL de Imagen" style="width: 100%; margin-bottom: 10px; padding: 8px;">
+                    <select id="course-category" required style="width: 100%; margin-bottom: 10px; padding: 8px;">
+                        <option value="curso">Curso</option>
+                        <option value="diplomatura">Diplomatura</option>
+                    </select>
+                    <label style="display: block; margin-bottom: 10px;">
+                        <input type="checkbox" id="course-active" checked> Activo (Visible al público)
+                    </label>
+                    <button type="submit" class="course-button" style="width: 100%;">Guardar Curso</button>
+                </form>
+            </div>
+
+            <h3>Gestión de Cursos (Todos)</h3>
+            <div class="admin-table-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Título</th>
+                            <th>Categoría</th>
+                            <th>Activo</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-courses-tbody">
+                        </tbody>
+                </table>
+            </div>
+
+            <h2 style="margin-top: 40px;">Registros de Inscripción (Todos)</h2>
+            <div class="admin-table-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Curso</th>
+                            <th>Nombre Completo</th>
+                            <th>DNI</th>
+                            <th>Email</th>
+                            <th>Teléfono</th>
+                            <th>Ciudad</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody id="registrations-tbody">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <section class="courses-grid" id="dynamic-cursos">
+            <p>Cargando cursos...</p>
+        </section>
+
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <p>Rivadavia 846 (Concordia, ER, Argentina)</p>
+            <p>Contacto: De lunes a viernes de 15 a 20 horas</p>
+            <p>Contactos y redes</p>
+            <div class="footer-icons">
+                <a href="https://www.facebook.com/UTNConcordia" class="icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/utnconcordia?igsh=MTlhOHgzbTFsNTBraw==" class="icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/+5493456028922" class="icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:cursos@frcon.utn.edu.ar" class="icon"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> 
+    <script src="script.js"></script>
+</body>
+</html>

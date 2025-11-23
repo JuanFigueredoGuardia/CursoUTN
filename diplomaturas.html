@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diplomaturas - Extensión Universitaria</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="Imagenes/cursos-y-capacitacion-utn-concordia-2023.png" alt="Logo Extensión Universitaria" class="header-main-logo">
+        </a>
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar">Menú</label>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html" data-page="home">Inicio</a></li>
+                <li><a href="cursos.html" data-page="cursos">Cursos</a></li>
+                <li><a href="diplomaturas.html" data-page="diplomaturas" class="active">Diplomaturas</a></li>
+                <li><a href="contacto.html" data-page="contacto">Contacto</a></li>
+                <li><a href="#" id="header-auth-btn" data-page="auth">Acceso</a></li>
+                <li><button id="logout-btn" class="link-button" style="color: white; display: none;">Salir</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="courses-page">
+        <h1>Diplomaturas Disponibles</h1>
+        
+        <section id="admin-dashboard" class="content" style="display: none; max-width: 1200px; margin: 30px auto;">
+            <h2>Panel de Administración de Diplomaturas</h2>
+        </section>
+        
+        <section class="courses-grid" id="dynamic-diplomaturas">
+            <p>Cargando diplomaturas...</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Rivadavia 846 (Concordia, ER, Argentina)</p>
+            <p>Contacto: De lunes a viernes de 15 a 20 horas</p>
+            <p>Contactos y redes</p>
+            <div class="footer-icons">
+                <a href="https://www.facebook.com/UTNConcordia" class="icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/utnconcordia?igsh=MTlhOHgzbTFsNTBraw==" class="icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/+5493456028922" class="icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:cursos@frcon.utn.edu.ar" class="icon"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> 
+    <script src="script.js"></script>
+</body>
+</html>

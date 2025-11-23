@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="Imagenes/cursos-y-capacitacion-utn-concordia-2023.png" alt="Logo Extensión Universitaria" class="header-main-logo">
+        </a>
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar">Menú</label>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="diplomaturas.html">Diplomaturas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="#" id="header-auth-btn">Acceso</a></li>
+                <li><button id="logout-btn" class="link-button" style="color: white; display: none;">Salir</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="registration-page content" style="max-width: 600px; margin: 100px auto 50px; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        
+        <h1 id="course-title-register" style="color: #003366;">Inscripción al Curso/Diplomatura</h1>
+        <p style="margin-bottom: 20px; color: #555;">Completa tus datos para formalizar la inscripción. ¡El DNI es el identificador único!</p>
+        
+        <p id="reg-message" style="margin-bottom: 15px; font-weight: bold;"></p>
+
+        <form id="registration-form">
+            <input type="hidden" id="course-id-input" name="course-id-input"> 
+
+            <label for="reg-name">Nombre:</label>
+            <input type="text" id="reg-name" name="reg-name" required>
+
+            <label for="reg-lastname">Apellido:</label>
+            <input type="text" id="reg-lastname" name="reg-lastname" required>
+
+            <label for="reg-document">N° de Documento (DNI/Pasaporte):</label>
+            <input type="text" id="reg-document" name="reg-document" required>
+
+            <label for="reg-email">Correo Electrónico:</label>
+            <input type="email" id="reg-email" name="reg-email" required>
+
+            <label for="reg-phone">Teléfono de contacto:</label>
+            <input type="text" id="reg-phone" name="reg-phone">
+
+            <label for="reg-city">Ciudad:</label>
+            <input type="text" id="reg-city" name="reg-city">
+
+            <button type="submit" class="course-button" style="width: 100%; margin-top: 20px;">Confirmar Inscripción</button>
+        </form>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Rivadavia 846 (Concordia, ER, Argentina)</p>
+            <p>Contacto: De lunes a viernes de 15 a 20 horas</p>
+            <p>Contactos y redes</p>
+            <div class="footer-icons">
+                <a href="https://www.facebook.com/UTNConcordia" class="icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/utnconcordia?igsh=MTlhOHgzbTFsNTBraw==" class="icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/+5493456028922" class="icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:cursos@frcon.utn.edu.ar" class="icon"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> 
+    <script src="script.js"></script>
+</body>
+</html>
